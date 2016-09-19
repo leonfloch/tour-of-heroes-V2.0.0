@@ -12,6 +12,8 @@ import { HeroeDetailComponent } from './heroe-detail/heroe-detail.component';
 import { routing } from './app.routing';
 import { DashboardComponentComponent } from './dashboard-component/dashboard-component.component';
 
+import { TodoService} from './todoDemo.service';
+
 
 
 
@@ -30,7 +32,7 @@ import { DashboardComponentComponent } from './dashboard-component/dashboard-com
     HttpModule,
     routing,    
   ],
-  providers: [HeroService],
+  providers: [HeroService, TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

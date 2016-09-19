@@ -1,0 +1,38 @@
+/*{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Extensión de inicio",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${execPath}",
+            "args": [
+                "--extensionDevelopmentPath=${workspaceRoot}"
+            ],
+            "stopOnEntry": false,
+            "sourceMaps": true,
+            "outDir": "${workspaceRoot}/out",
+            "preLaunchTask": "npm"
+        }
+    ]
+}*/
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch localhost with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceRoot}/src/app",
+            "sourceMaps": true
+        },
+        {
+            "name": "Launch index.html (without sourcemaps)",
+            "type": "chrome",
+            "request": "launch",
+            "file": "${workspaceRoot}/index.html"
+        }
+    ]
+}

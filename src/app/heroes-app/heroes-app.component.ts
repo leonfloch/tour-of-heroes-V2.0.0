@@ -3,13 +3,16 @@ import { Router } from '@angular/router';
 
 import { Hero } from '../hero';
 import { HeroeDetailComponent } from '../heroe-detail/heroe-detail.component';
-import {HeroService} from '../hero.service';
+import { HeroService } from '../hero.service';
+
+import { Todo } from '../todo';
+import { TodoService } from '../todoDemo.service';
 
 @Component({
   selector: 'my-heroes',
   templateUrl: './heroes-app.component.html',
   styleUrls: ['./heroes-app.component.css'],
-  
+
 })
 /**
  * Componente con la informacion de los heroes
@@ -21,10 +24,12 @@ export class HeroesAppComponent implements OnInit {
   //---------------------------------------------------------------------------
 
   /** Heroe seleccionado */
-  selectedHero:Hero;
+  selectedHero: Hero;
 
   /**lista de heroes */
-  public heroes:Hero[];
+  public heroes: Hero[];
+
+  public todoList: Todo[];
 
   //---------------------------------------------------------------------------
   // METODOS
@@ -34,7 +39,9 @@ export class HeroesAppComponent implements OnInit {
    * Constructor
    * inyeccion de dependencia de HeroService
    */
-  constructor(private router: Router, private heroService:HeroService) {
+  constructor(private router: Router,
+    private heroService: HeroService,
+    private todoService: TodoService) {
 
   }
 
@@ -43,6 +50,9 @@ export class HeroesAppComponent implements OnInit {
    */
   ngOnInit() {
     this.getHeroes();
+
+    this.todoService.leerDatos().subscribe(rest => {this.todoList = rest.json});
+    console.log("Todo size: " + this.todoList);
 
   }
 
@@ -56,7 +66,7 @@ export class HeroesAppComponent implements OnInit {
   /**
    * Hero seleccionado
    */
-  onSelect(hero:Hero) {
+  onSelect(hero: Hero) {
     this.selectedHero = hero;
   }
 
