@@ -51,8 +51,8 @@ export class HeroesAppComponent implements OnInit {
   ngOnInit() {
     this.getHeroes();
 
-    this.todoService.leerDatos().subscribe(rest => {this.todoList = rest.json});
-    console.log("Todo size: " + this.todoList);
+    this.todoService.leerDatos().subscribe(rest => {this.todoList = rest.json});   
+    console.log("Entro..."); 
 
   }
 

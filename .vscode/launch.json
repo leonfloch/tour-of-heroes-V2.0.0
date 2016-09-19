@@ -1,4 +1,4 @@
-/*{
+{
     "version": "0.2.0",
     "configurations": [
         {
@@ -15,9 +15,9 @@
             "preLaunchTask": "npm"
         }
     ]
-}*/
+}
 
-{
+/*{
     "version": "0.2.0",
     "configurations": [
         {
@@ -35,4 +35,4 @@
             "file": "${workspaceRoot}/index.html"
         }
     ]
-}
+}*/

@@ -11,3 +11,10 @@
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
+
+
+<li *ngFor="let todo of todoList">
+    <span class="badge">{{todo.id}}</span> {{todo.title}}
+  </li>
+
+
